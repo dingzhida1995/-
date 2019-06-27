@@ -58,3 +58,4 @@ Route::get('home/doorder','Home\cart@doorder');//添加订单
 Route::get('home/orderlist','Home\cart@orderlist');//添加订单
 Route::post('home/zhifu','Pay\AliPayController@pay');//订单支付
 Route::post('/notify_url','Pay\AliPayController@aliNotify');//异步通知
+Route::get('/ttt','Pay\AliPayController@aliReturn');//异步通知
