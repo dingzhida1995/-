@@ -115,9 +115,14 @@
                         _this.parent().parent().parent().parent().parent().parent().next().children('.row').children('form').css('display','none');
                         _this.after("<b>已超过支付时间</b>");
                         _this.remove();
-
                     }
-
+                    if(diff <= 0 && state == 2){
+                        //window.location.reload();
+                        //_this.parent().parent().parent().parent().parent().parent().parent().prev('.collapsible-header').children('.status').text('已过期');
+                        _this.parent().parent().parent().parent().parent().parent().next().children('.row').children('form').css('display','none');
+                        _this.after("<b>已付款成功</b>");
+                        _this.remove();
+                    }    
                     h = parseInt(diff / 3600);//获取还有小时
                     m = parseInt(diff / 60 % 60);//获取还有分钟
                     s = diff % 60;//获取多少秒数
