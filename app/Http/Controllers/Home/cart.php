@@ -69,7 +69,7 @@ class cart extends Controller
     //订单列表展示
     public function orderlist()
     {
-        $dada=DB::table('order')->where('uid','=',session('id'))->get()->toArray();
+        $dada=DB::table('order')->where('uid','=',session('id'))->orderBy('add_time','desc')->get()->toArray();
         foreach($dada as $k=>$v){
             unset($dada[$k]);
             $dada[$k]['id']=$v->id;
